@@ -8,15 +8,20 @@ package actividadejerciciospracticos;
 import java.util.Scanner;
 
 /**
- *
+ * EJERCICIOS PRATICOS
  * @author Adrian Quej
+ * @since 2020
+ * @version 1.0
  */
 public class ActividadEjerciciosPracticos {
-
+    
     public static int palabras=1;
     public static String[][] aPersonajes;
     public static String[][] Preguntas;
     public static String[][] Incisos;
+    /**
+     * AQUI ES EL ENCABEZADO DEL CODIGO
+     */
     public static void encabezado() {
         System.out.println("Universidad Autonoma de Campeche");
         System.out.println("Facultad de Ingenieria");
@@ -24,6 +29,9 @@ public class ActividadEjerciciosPracticos {
         System.out.println("Mayo 2021");
         System.out.println("ADRIAN ERNESTO AGUILAR QUEJ");
     }
+    /**
+     * ESTE ES EL MENU DEL CODIGO, DONDE SE ELIGIRA LA OPERACION A REALIZAR
+     */
     public static void cuerpo(){
         System.out.println("--------------------");
         System.out.println("ACTIVIDAD EJERCICIOS PRACTICOS");
@@ -33,14 +41,25 @@ public class ActividadEjerciciosPracticos {
         System.out.println("3 - Quizz");
         System.out.println("--------------------");
     }
+    /**
+     * ES EL PIE DEL CODIGO
+     * 
+     */
     public static void pie(){
         System.out.println("-----------");
         System.out.println("AQ.2021");
     }
     public static String[][] aCodigo;
+    /**
+     * AQUI SE CONVERTIRA CADA LETRA A VALOR ASCII, POSTERIORMENTE SE IMPRIME SU VALOR EN MORSE COMPARANDOLO CON EL ARREGLO UTILIZADO
+     * @param cChar
+     * @return 
+     */
     public static String valAscii(char cChar){
+        
         int asciiValue;
         asciiValue= (int) cChar;
+        
         if (asciiValue==32) {
             asciiValue=91;
             palabras++;
@@ -48,6 +67,9 @@ public class ActividadEjerciciosPracticos {
         
         return aCodigo[asciiValue-65][0] +" "+aCodigo[asciiValue-65][1];
     }
+    /**
+     * Arreglo con las letras del alfabeto y su equivalente en codigo morse
+     */
     public static void ArrayAscii(){
         
         aCodigo = new String[27][2];
@@ -109,16 +131,25 @@ public class ActividadEjerciciosPracticos {
         aCodigo[26][1]= " ";
     
     }
+    /**
+     * Aqui se define el precio dependiendo del numero de palabras empleadas, menos de 5 son 10 y por cada extra son 3 extra
+     */
     public static void precios(){
+        
         int total;
         if (palabras<5) {
             total=10;
         } else{
+            
             total= 10 + (palabras-4)*3;
           }
         System.out.println("Numero de palabras : " + palabras);
+        
         System.out.println("Pase a pagar "+ total + " pesos");
     }
+    /**
+    * Arreglo con los personajes de star wars
+    */
     public static void PersonajesStarWars(){
         
         aPersonajes = new String[16][3];
@@ -171,9 +202,12 @@ public class ActividadEjerciciosPracticos {
         aPersonajes[15][1] = "188";
         aPersonajes[15][2] = "male";
     }
+    /**
+    * Arreglo con preguntas y el inciso correcto
+    */
     public static void preguntas(){
     Preguntas = new String[10][2];
-
+        
         Preguntas[0][0] = "¿Cuál es la sintaxis correcta para generar Hello World en Java?";
         Preguntas[0][1] = "0";
         Preguntas[1][0] = "¿Cómo se insertan comentarios de una línea en Java?";
@@ -195,7 +229,11 @@ public class ActividadEjerciciosPracticos {
         Preguntas[9][0] = "¿Cómo se inicia la sentencia if en Java?";
         Preguntas[9][1] = "0";
     }
+    /**
+    * Incisos de cada pregunta
+    */
     public static void incisos(){
+        
         Incisos = new String[10][3];
         Incisos[0][0] = "System.out.println( Hello World );";
         Incisos[0][1] = "echo( Hello World );";
@@ -228,6 +266,10 @@ public class ActividadEjerciciosPracticos {
         Incisos[9][1] = "if x > y;";
         Incisos[9][2] = "if x > y then;";
     }
+    /**
+     * MENU DEL PROGRAMA CON OPCIONES A EJECUTAR
+     * @param opcion 
+     */
     public static void menu(int opcion){
     switch(opcion){
         
@@ -307,6 +349,10 @@ public class ActividadEjerciciosPracticos {
                 System.out.println("Opcion no valida");
         }
     }
+    /**
+     * MAIN DEL CODIGO
+     * @param args 
+     */
     public static void main(String[] args) {
         encabezado();
         cuerpo();
